@@ -1,72 +1,34 @@
-import React, {useState} from 'react';
-import { Link } from 'react-router-dom';
-import './Navbar.css';
-import { Button } from './Button';
+import React, { useState } from "react";
+import Logo from "../Assets/Images/Logo.PNG";
+import { Link } from "react-router-dom";
+import "../styles/Navbar.css";
 
 function Navbar() {
-    const [click, setClick] = useState(false);
-    const [button, setButton] = useState(true);
+  const [openLinks, setOpenLinks] = useState(false);
 
-    const handleClick = () => setClick(!click);
-    const closeMobileMenu = () => setClick(false);
-
-    const showButton = () => {
-        if(window.innerWidth <= 960) {
-            setButton(false);
-        } else {
-            setButton(true);
-        }
-    };
-
-    window.addEventListener('resize', showButton);
-
+  const toggleNavbar = () => {
+    setOpenLinks(!openLinks);
+  };
   return (
-    <>
-        <nav className="navbar">
-            <div className="navbar-container">
-                <Link to='/' className='navbar-logo'>
-                YegnaGebeya
-                </Link>
-                <div className='menu-icon' onClick={handleClick}>
-                    <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
-                </div>
-                <ul className={click ? 'nav-menu active' : 'nav-menu'}>
-                    <li className='nav-item'>
-                        <Link to='/' className='nav-links' onClick={closeMobileMenu}>
-                            Home    
-                        </Link> 
-                    </li>
-                    <li className='nav-item'>
-                        <Link to='/services' className='nav-links' onClick={closeMobileMenu}>
-                            My Cart    
-                        </Link> 
-                    </li>
-                    <li className='nav-item'>
-                        <Link to="/Men's" className='nav-links' onClick={closeMobileMenu}>
-                            Men's    
-                        </Link> 
-                    </li>
-                    <li className='nav-item'>
-                        <Link to="/Women's" className='nav-links' onClick={closeMobileMenu}>
-                            Women's    
-                        </Link> 
-                    </li>
-                    <li className='nav-item'>
-                        <Link to='/Phones & Laptops' className='nav-links' onClick={closeMobileMenu}>
-                            Phones & Laptops    
-                        </Link> 
-                    </li>
-                    <li className='nav-item'>
-                        <Link to='/Home Appliances' className='nav-links' onClick={closeMobileMenu}>
-                            Home Appliances    
-                        </Link> 
-                    </li>
-                </ul>
-                {button && <Button buttonStyle='btn--outline'>Return Home</Button>}
-            </div>
-        </nav>
-    </>
-  )
+    <div className="navbar">
+      <div className="leftSide" id={openLinks ? "open" : "close"}>
+        <img src={Logo} alt="Logo"/>
+        <div className="hiddenLinks">
+          <Link to="/"> Home </Link>
+          <Link to="/menu"> Products </Link>
+          <Link to="/about"> About </Link>
+          <Link to="/contact"> Contact </Link>
+        </div>
+      </div>
+      <div className="rightSide">
+        <Link to="/"> Home </Link>
+        <Link to="/menu"> Products </Link>
+        <Link to="/about"> About </Link>
+        <Link to="/contact"> Contact </Link>
+        <button onClick={toggleNavbar}></button>
+      </div>
+    </div>
+  );
 }
 
-export default Navbar
+export default Navbar;
