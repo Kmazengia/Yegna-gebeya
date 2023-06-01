@@ -4,9 +4,6 @@ import Footer from "./components/Footer";
 import Home from "./Pages/Home";
 import Products from "./Pages/Products";
 import Login from "./Pages/Login";
-
-
-
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
@@ -15,10 +12,11 @@ function App() {
       <Router>
         <Navbar />
         <Routes>
-          <Route path="/" exact component={Home} />
-          <Route path="/products" exact component={Products} />
-          <Route path="/products" exact component={Login} />
+          <Route path="/" exact element={Home} />
+          <Route path="/products" exact element={Products} />
+          <Route path="/login" exact element={Login} />
         </Routes>
+        <Home></Home>
         <Footer />
       </Router>
     </div>

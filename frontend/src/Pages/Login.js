@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import "../styles/Login.css";
+import { Link } from "react-router-dom";
 
 function Login(props) {
   const [email, setEmail] = useState('');
@@ -36,9 +36,9 @@ function Login(props) {
           />
           <button>Log In</button>
         </form>
-        <button className="link-btn" onClick={() => props.onFormSwitch('register')}>
+        <Link><button className="link-btn" onClick={() => props.onFormSwitch('register')}>
           Don't have an account? Register here.
-        </button>
+        </button></Link>
       </>
     </div>
   );
