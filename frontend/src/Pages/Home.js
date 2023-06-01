@@ -6,10 +6,10 @@ function Home() {
   return (
     <div className="home">
       <div className="headerContainer">
-        <h1> Pedro's Pizzeria </h1>
-        <p> PIZZA TO FIT ANY TASTE</p>
+        <h1> Yegna Gebeya </h1>
+        <p> Shop Smart Shop Easy!</p>
         <Link to="/menu">
-          <button> ORDER NOW </button>
+          <button> Purchase Now </button>
         </Link>
       </div>
     </div>
