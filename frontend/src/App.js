@@ -1,18 +1,27 @@
+import "./App.css";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Home from "./Pages/Home";
+import Products from "./Pages/Products";
+import Login from "./Pages/Login";
 
-import React from 'react';
-import Navbar from './components/Navbar';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import './App.css';
+
+
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
-    <Router>
-      <Navbar>
+    <div className="App">
+      <Router>
+        <Navbar />
         <Routes>
-          <Route path='/' exact />
+          <Route path="/" exact component={Home} />
+          <Route path="/products" exact component={Products} />
+          <Route path="/products" exact component={Login} />
         </Routes>
-      </Navbar>
-    </Router>
+        <Footer />
+      </Router>
+    </div>
   );
 }
 
