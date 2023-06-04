@@ -13,8 +13,8 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" exact element={Home} />
-          <Route path="/products" exact element={Products} />
-          <Route path="/login" exact element={Login} />
+          <Route path="/products.js" element={Products} />
+          <Route path="/login" element={<Login />} />
         </Routes>
         <Home></Home>
         <Footer />
