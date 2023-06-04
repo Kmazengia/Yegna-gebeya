@@ -22,11 +22,11 @@ function Navbar() {
         </div>
       </div>
       <div className="rightSide">
-        <Link to="/"> Home </Link>
-        <Link to="/menu"> Products </Link>
-        <Link to="/about"> About </Link>
-        <Link to="/contact"> Contact </Link>
-        <Link to="/login"> Login </Link>
+        <Link to="../Pages/Home">Home</Link>
+        <Link to="../Pages/Products">Products</Link>
+        <Link to="/about">About</Link>
+        <Link to="/contact">Contact</Link>
+        <Link to="../Pages/Login">Login</Link>
         <button onClick={toggleNavbar}></button>
       </div>
     </div>
